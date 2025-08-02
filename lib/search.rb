@@ -24,7 +24,7 @@ module Search
       loop do
         display_menu
         option = gets.chomp.to_i
-        break unless handle_user_option(option)
+        break unless handle_user_option(option, @clients)
 
         break unless search_continue
       end
