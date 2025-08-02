@@ -3,4 +3,4 @@
 
 require_relative '../lib/search'
 
-Search::Runner.run
+Search::App.run
