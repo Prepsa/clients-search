@@ -18,7 +18,7 @@ module Search
 
       search_run = true
       while search_run
-        puts "1. Search for duplicate emails\n2. Search by partial email match\n3. Exit"
+        puts "1. Search for duplicate emails\n2. Search by partial name match\n3. Exit"
         puts 'Please choose an option (1-3): '
         puts '-----------------------------------'
 
@@ -32,7 +32,7 @@ module Search
           puts 'You chose to search by partial email match.'
           puts 'You can search for emails that contain a specific text.'
           puts '-----------------------------------'
-          search_by_partial_email_match
+          search_by_partial_name_match
         when 3
           puts 'Exiting the program. Goodbye!'
           search_run = false
@@ -74,16 +74,16 @@ module Search
       end
     end
 
-    def search_by_partial_email_match
-      puts 'Enter the text to search for in emails: '
+    def search_by_partial_name_match
+      puts 'Enter the text to search for in names: '
       partial_text = gets.chomp.strip.downcase
 
-      matching_emails = @client_lists.select { |client| client['email'].downcase.include?(partial_text) }
-      return puts "No client found with email containing: #{partial_text}." if matching_emails.empty?
+      matching_names = @client_lists.select { |client| client['full_name'].downcase.include?(partial_text) }
+      return puts "No client found with name containing: #{partial_text}." if matching_names.empty?
 
-      puts "Client with email containing: '#{partial_text}' found in the client list:"
+      puts "Client with name containing: '#{partial_text}' found in the client list:"
       puts 'ID | Client Name           | Client Email'
-      matching_emails.each do |client|
+      matching_names.each do |client|
         puts "#{client['id']} | #{client['full_name']} | #{client['email']}"
       end
     end
