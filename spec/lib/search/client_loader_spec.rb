@@ -8,9 +8,9 @@ require_relative '../../../lib/search/client'
 RSpec.describe Search::ClientLoader do
   let(:sample_data) do
     [
-      { 'id' => 1, 'full_name' => 'Alice', 'email' => 'alice@example.com' },
-      { 'id' => 2, 'full_name' => 'Bob', 'email' => 'bob@example.com' },
-      { 'id' => 3, 'full_name' => 'Duplicate Bob', 'email' => 'bob@example.com' }
+      { 'id' => 1, 'full_name' => 'John Doe', 'email' => 'john@example.com' },
+      { 'id' => 2, 'full_name' => 'Jane Smith', 'email' => 'jane@example.com' },
+      { 'id' => 3, 'full_name' => 'Johnny Depp', 'email' => 'john@example.com' },
     ]
   end
 
@@ -38,8 +38,8 @@ RSpec.describe Search::ClientLoader do
 
       expect(client).to be_a(Search::Client)
       expect(client.id).to eq(1)
-      expect(client.full_name).to eq('Alice')
-      expect(client.email).to eq('alice@example.com')
+      expect(client.full_name).to eq('John Doe')
+      expect(client.email).to eq('john@example.com')
     end
   end
 

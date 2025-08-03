@@ -2,14 +2,14 @@
 
 require 'spec_helper'
 require 'tempfile'
-require_relative '../../lib/search'
+require_relative '../../lib/search_app'
 
-RSpec.describe Search::App do
+RSpec.describe SearchApp do
   let(:sample_data) do
     [
-      { 'id' => 1, 'full_name' => 'Alice Smith', 'email' => 'alice@example.com' },
-      { 'id' => 2, 'full_name' => 'Bob Johnson', 'email' => 'bob@example.com' },
-      { 'id' => 3, 'full_name' => 'Charlie Brown', 'email' => 'charlie@example.com' }
+      { 'id' => 1, 'full_name' => 'John Doe', 'email' => 'john@example.com' },
+      { 'id' => 2, 'full_name' => 'Jane Smith', 'email' => 'jane@example.com' },
+      { 'id' => 3, 'full_name' => 'Johnny Depp', 'email' => 'john@example.com' }
     ]
   end
 
