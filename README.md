@@ -20,6 +20,10 @@ A simple command-line application that allows users to search for duplicate emai
 - [Usage](##usage)
 - [Project Structure](##project-structure)
 - [Testing](##testing)
+- [Assumptions and Design Decisions](##assumptions-and-design-decisions)
+- [Known Limitations](##known-limitations)
+- [Future Improvements](##future-improvements)
+- [Next Priorities](##next-priorities)
 - [Author](##author)
 
 ## Core Technologies
